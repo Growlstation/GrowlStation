@@ -16,7 +16,7 @@ jobs:
       group: run_linters-${{ github.head_ref || github.run_id }}
       cancel-in-progress: true
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       # Caches
       - name: Ensure +x on CI directory
         run: |
@@ -87,7 +87,7 @@ jobs:
     name: DreamChecker
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Restore SpacemanDMM Cache
         uses: actions/cache@v4
@@ -122,7 +122,7 @@ jobs:
     # needs: ['run_linters', 'dreamchecker']
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Ensure +x on CI directory
         run: |
           chmod -R +x ./tools/ci
